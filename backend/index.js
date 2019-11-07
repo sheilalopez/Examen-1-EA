@@ -7,11 +7,17 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const errorHandler = require("errorhandler");
 //Import routes
+let testRouter = require('./routes/test');
+let subjectRouter = require('./routes/subjectRoutes');
+let studentRouter = require('./routes/studentRoutes');
 //Server variable initialization
 let app = express();
 app.use(cors());
 app.use(bodyParser());
 app.use(errorHandler());
+app.use('/test', testRouter);
+app.use('/subject', subjectRouter);
+app.use('/student', studentRouter);
 //Make app listen on port 3000
 app.listen(3000);
 console.log('Server listening on port 3000');
