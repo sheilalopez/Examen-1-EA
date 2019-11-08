@@ -3,6 +3,7 @@ import {Subject} from "../../models/subject";
 import {SubjectService} from "../../services/subject.service";
 import {Student} from "../../models/student";
 import {StudentService} from "../../services/student.service";
+import {FormControl} from "@angular/forms";
 
 @Component({
   selector: 'app-main',
@@ -19,6 +20,7 @@ export class MainComponent implements OnInit {
   currentStudent: Student;
   selectedSubject: Subject;
   selectedStudent: Student;
+  form: FormControl = new FormControl();
 
 
   async ngOnInit() {
@@ -46,6 +48,10 @@ export class MainComponent implements OnInit {
   }
   public async joinStudent(){
    await this.subjectService.joinStudent(this.selectedSubject.name,this.selectedStudent.name).toPromise();
+  }
+  public async addSubject (){
+    await this.subjectService.addSubject(this.form.value).toPromise();
+
   }
 
 }

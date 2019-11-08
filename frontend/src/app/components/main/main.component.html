@@ -1,11 +1,18 @@
+<h1>Lista de Asignaturas</h1>
 <div>
+  <mat-card>
+
+
 <mat-list>
+
   <mat-list-item *ngFor="let subject of subjects"
   (click)="getStudents(subject)">
     {{subject.name}}
 
   </mat-list-item>
 </mat-list>
+  </mat-card>
+
 <mat-list>
   <mat-list-item *ngFor="let student of students"
   (click)="getInfoStudent(student)">
@@ -26,7 +33,9 @@
   </div>
 </div>
 
-<h1>Añadir student a asignatura</h1>
+<h1>Añadir estudente a asignatura</h1>
+<mat-card>
+  <h3>Asignaturas:</h3>
 <mat-list>
   <mat-list-item *ngFor="let subject of subjects"
                  (click)="saveSubject(subject)">
@@ -34,10 +43,25 @@
 
   </mat-list-item>
 </mat-list>
+</mat-card>
+<p></p>
+<mat-card>
+  <h3>Estudiantes:</h3>
 <mat-list>
   <mat-list-item *ngFor="let student of allStudents"
                  (click)="saveStudent(student)">
     {{student.name}}
   </mat-list-item>
 </mat-list>
-<button mat-button (click)="joinStudent()">Añadir</button>
+</mat-card>
+<button mat-raised-button (click)="joinStudent()">Añadir</button>
+<h1>Añadir asignatura</h1>
+
+<input matInput placeholder="name" [formControl]="form" >
+
+<button mat-raised-button (click)="addSubject()">Añadir Asignatura </button>
+
+
+
+
+

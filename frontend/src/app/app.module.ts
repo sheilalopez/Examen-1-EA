@@ -9,13 +9,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatListModule} from "@angular/material/list";
 import {HttpClientModule} from "@angular/common/http";
 import {MatButtonModule} from "@angular/material/button";
+import { AddSubjectComponent } from './components/add-subject/add-subject.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatCardModule} from "@angular/material/card";
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AddstudentComponent,
-    MainComponent
+    MainComponent,
+    AddSubjectComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +27,9 @@ import {MatButtonModule} from "@angular/material/button";
     BrowserAnimationsModule,
     MatListModule,
     HttpClientModule,
-    MatButtonModule
+    MatButtonModule,
+    ReactiveFormsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
