@@ -10,7 +10,11 @@ let student = mongoose.Schema(
                 description: String,
                 number: String
             }
-        ]
+        ],
+        studies: [{type: mongoose.Types.ObjectId, ref: 'Especialidad'}]
+
+
+
     }
 );
 

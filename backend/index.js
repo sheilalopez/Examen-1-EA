@@ -10,6 +10,7 @@ const errorHandler = require("errorhandler");
 let testRouter = require('./routes/test');
 let subjectRouter = require('./routes/subjectRoutes');
 let studentRouter = require('./routes/studentRoutes');
+let especialidadRouter = require('./routes/especialidadRoutes');
 //Server variable initialization
 let app = express();
 app.use(cors());
@@ -18,6 +19,7 @@ app.use(errorHandler());
 app.use('/test', testRouter);
 app.use('/subject', subjectRouter);
 app.use('/student', studentRouter);
+app.use('/especialidad', especialidadRouter);
 //Make app listen on port 3000
 app.listen(3000);
 console.log('Server listening on port 3000');

@@ -9,6 +9,7 @@ import errorHandler = require('errorhandler');
 let testRouter = require('./routes/test');
 let subjectRouter = require('./routes/subjectRoutes');
 let studentRouter = require('./routes/studentRoutes');
+let especialidadRouter = require('./routes/especialidadRoutes');
 
 
 //Server variable initialization
@@ -20,6 +21,7 @@ app.use(errorHandler());
 app.use('/test', testRouter);
 app.use('/subject', subjectRouter);
 app.use('/student', studentRouter);
+app.use('/especialidad', especialidadRouter);
 
 
 
