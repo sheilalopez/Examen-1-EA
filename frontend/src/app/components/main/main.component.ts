@@ -24,6 +24,7 @@ export class MainComponent implements OnInit {
   selectedStudent: Student;
   especialidades: Especialidad[];
   studentsC: Student[];
+  studentC: Student;
   form: FormControl = new FormControl();
 
 

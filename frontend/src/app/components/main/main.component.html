@@ -14,8 +14,7 @@
   </mat-card>
 
 <mat-list>
-  <mat-list-item *ngFor="let student of students"
-  (click)="getInfoStudent(student)">
+  <mat-list-item *ngFor="let student of students" (click)="getInfoStudent(student)">
     {{student.name}}
   </mat-list-item>
 </mat-list>
@@ -42,8 +41,8 @@
     </mat-list>
   </mat-card>
         <mat-list>
-          <mat-list-item *ngFor="let student of studentsC">
-            {{student.name}}
+          <mat-list-item *ngFor="let studentC of studentsC">
+            {{studentC.name}}
           </mat-list-item>
         </mat-list>
 
