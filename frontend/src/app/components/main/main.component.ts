@@ -4,6 +4,8 @@ import {SubjectService} from "../../services/subject.service";
 import {Student} from "../../models/student";
 import {StudentService} from "../../services/student.service";
 import {FormControl} from "@angular/forms";
+import {Especialidad} from "../../models/especialidad";
+import {EspecialidadService} from "../../services/especialidad.service";
 
 @Component({
   selector: 'app-main',
@@ -12,7 +14,7 @@ import {FormControl} from "@angular/forms";
 })
 export class MainComponent implements OnInit {
 
-  constructor(private subjectService: SubjectService, private studentService: StudentService) { }
+  constructor(private subjectService: SubjectService, private studentService: StudentService, private especialidadService: EspecialidadService) { }
 
   subjects: Subject [];
   students: Student[];
@@ -20,12 +22,15 @@ export class MainComponent implements OnInit {
   currentStudent: Student;
   selectedSubject: Subject;
   selectedStudent: Student;
+  especialidades: Especialidad[];
+  studentsC: Student[];
   form: FormControl = new FormControl();
 
 
   async ngOnInit() {
     this.subjects = await this.subjectService.getSubjects().toPromise();
     this.allStudents = await this.studentService.getStudents().toPromise();
+    this.especialidades = await this.especialidadService.getEspecialidades().toPromise();
 
   }
  //obtengo estudiantes de una asignatura
@@ -33,6 +38,11 @@ export class MainComponent implements OnInit {
     //this.students = await this.subjectService.getStudents(subject.name).toPromise();
     this.students = subject.students;
     console.log(subject);
+  }
+  //obtengo estudiantes de una carrera
+  public getStudentsC(especialidad){
+    this.studentsC = especialidad.studentsC;
+    console.log(especialidad);
   }
   public getInfoStudent(student){
     this.currentStudent = student;
@@ -42,6 +52,7 @@ export class MainComponent implements OnInit {
     this.selectedStudent = student;
     console.log(student);
   }
+
 
   public saveSubject(subject){
     this.selectedSubject = subject;

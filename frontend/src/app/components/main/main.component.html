@@ -32,6 +32,27 @@
 
   </div>
 </div>
+<h1>Lista de Especialidades</h1>
+<div>
+  <mat-card>
+    <mat-list>
+      <mat-list-item *ngFor="let especialidad of especialidades" (click)="getStudentsC(especialidad)">
+        {{especialidad.name}}
+      </mat-list-item>
+    </mat-list>
+  </mat-card>
+        <mat-list>
+          <mat-list-item *ngFor="let student of studentsC">
+            {{student.name}}
+          </mat-list-item>
+        </mat-list>
+
+
+</div>
+
+
+
+
 
 <h1>Añadir estudente a asignatura</h1>
 <mat-card>
