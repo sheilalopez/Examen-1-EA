@@ -24,3 +24,11 @@ exports.addEspecialidad = async function (req, res){
     let result = await newEspecialidad.save();
     res.status(200).send(result);
 };
+exports.addStudentToEspecialidad = async function (req, res){
+    let especialidad = req.body.especialidad;
+    let student = await Student.findOne({name: req.body.student.name});
+
+    let result = await Especialidad.updateOne({name: especialidad.name}, {$push:{students: ObjectId(student._id)}})
+    res.status(200).send(result);
+};
+

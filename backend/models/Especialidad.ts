@@ -2,6 +2,7 @@
 import mongoose = require ("mongoose");
 
 
+
 let especialidad = mongoose.Schema(
     {
         name: String,

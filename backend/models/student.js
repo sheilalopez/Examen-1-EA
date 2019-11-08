@@ -10,6 +10,5 @@ let student = mongoose.Schema({
             number: String
         }
     ],
-    studies: [{ type: mongoose.Types.ObjectId, ref: 'Especialidad' }]
 });
 module.exports = mongoose.model('Student', student);

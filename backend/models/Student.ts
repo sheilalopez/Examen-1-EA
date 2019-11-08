@@ -11,7 +11,8 @@ let student = mongoose.Schema(
                 number: String
             }
         ],
-        studies: [{type: mongoose.Types.ObjectId, ref: 'Especialidad'}]
+        //studies: [{type: mongoose.Types.ObjectId, ref: 'Especialidad'}]
+
 
 
 

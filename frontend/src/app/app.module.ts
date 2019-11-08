@@ -12,6 +12,7 @@ import {MatButtonModule} from "@angular/material/button";
 import { AddSubjectComponent } from './components/add-subject/add-subject.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatCardModule} from "@angular/material/card";
+import { EspecialidadComponent } from './models/especialidad/especialidad.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import {MatCardModule} from "@angular/material/card";
     AppComponent,
     AddstudentComponent,
     MainComponent,
-    AddSubjectComponent
+    AddSubjectComponent,
+    EspecialidadComponent
   ],
   imports: [
     BrowserModule,
