@@ -19,7 +19,7 @@ exports.addStudent = async function (req, res){
 };
 
 exports.getStudent = async function (req, res){
-    let s = req.query.id;
+    let s = req.params.id;
     let student = await Student.findOne({_id: s});
     if(student) {
         res.status(200).json(student);

@@ -16,10 +16,12 @@ export class StudentService {
   }
 
   getStudents(): Observable<Student[]>{
-  return this.http.get<Student[]>(this.environment.urlStudent+'/student/get');
+    console.log(this.environment.urlStudent);
+  return this.http.get<Student[]>(this.environment.urlStudent+'/get');
+
   }
   addNewStudent(student: Student){
-    return this.http.post(this.environment.urlStudent+'/student/add',{student});
+    return this.http.post(this.environment.urlStudent+'/add',{student});
   }
 }
 

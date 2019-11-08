@@ -28,7 +28,7 @@ exports.addStudent = function (req, res) {
 };
 exports.getStudent = function (req, res) {
     return __awaiter(this, void 0, void 0, function* () {
-        let s = req.query.id;
+        let s = req.params.id;
         let student = yield Student.findOne({ _id: s });
         if (student) {
             res.status(200).json(student);

@@ -1,7 +1,7 @@
 import express = require('express');
 let router: express.Router = express.Router();
 
-let testScripts = require('../controllers/testScripts');
+let testScripts = require('../controllers/test');
 
 router.get('/get', testScripts.test);
 

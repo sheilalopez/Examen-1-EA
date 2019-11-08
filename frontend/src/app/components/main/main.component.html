@@ -1,0 +1,43 @@
+<div>
+<mat-list>
+  <mat-list-item *ngFor="let subject of subjects"
+  (click)="getStudents(subject)">
+    {{subject.name}}
+
+  </mat-list-item>
+</mat-list>
+<mat-list>
+  <mat-list-item *ngFor="let student of students"
+  (click)="getInfoStudent(student)">
+    {{student.name}}
+  </mat-list-item>
+</mat-list>
+  <div *ngIf="currentStudent">
+      {{currentStudent.name}}
+      {{currentStudent.address}}
+      <mat-list>
+        <mat-list-item *ngFor="let phone of currentStudent.phones">
+          {{phone.description}}
+          {{phone.number}}
+
+        </mat-list-item>
+      </mat-list>
+
+  </div>
+</div>
+
+<h1>Añadir student a asignatura</h1>
+<mat-list>
+  <mat-list-item *ngFor="let subject of subjects"
+                 (click)="saveSubject(subject)">
+    {{subject.name}}
+
+  </mat-list-item>
+</mat-list>
+<mat-list>
+  <mat-list-item *ngFor="let student of allStudents"
+                 (click)="saveStudent(student)">
+    {{student.name}}
+  </mat-list-item>
+</mat-list>
+<button mat-button (click)="joinStudent()">Añadir</button>
